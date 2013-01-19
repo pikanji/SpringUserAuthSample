@@ -1,0 +1,6 @@
+# generated files
+*target/
+
+# local files
+.DS_store
+*~
