@@ -5,6 +5,7 @@ This project demonstrates how to implement user authentication for front-end web
 
 Git Tags
 ==========
+* database: Uses DB for auth
 * encrypt: Uses encrypted password
 * show_user: Displays user name if logged in
 * login_link: Arbitrary jump to login screen by link

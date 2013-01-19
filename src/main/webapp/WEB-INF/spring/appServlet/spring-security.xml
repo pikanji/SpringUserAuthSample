@@ -7,6 +7,13 @@
 		http://www.springframework.org/schema/security
 		http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
+	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<beans:property name="url" value="jdbc:mysql://localhost/db_name" />
+		<beans:property name="username" value="db_user" />
+		<beans:property name="password" value="db_password" />
+	</beans:bean>
+
 	<beans:bean id="encoder" class="org.springframework.security.crypto.password.StandardPasswordEncoder" />
 
 	<http auto-config="true" />
@@ -14,9 +21,10 @@
 	<authentication-manager>
 		<authentication-provider>
 			<password-encoder ref="encoder" />
-			<user-service>
-				<user name="hoge" password="4c17b8a334f61a4d5c0b79f11977482ea7542c0761b74ee421b9cfe620ec1a7e07357932200428f6" authorities="ROLE_USER" />
-			</user-service>
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="SELECT user_name, password, enabled FROM users WHERE user_name = ?"
+				authorities-by-username-query="SELECT user_name, 'ROLE_USER' FROM users WHERE user_name = ?"
+				/>
 		</authentication-provider>
 	</authentication-manager>
 
