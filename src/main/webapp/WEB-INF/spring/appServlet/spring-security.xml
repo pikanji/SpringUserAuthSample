@@ -7,12 +7,15 @@
 		http://www.springframework.org/schema/security
 		http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
+	<beans:bean id="encoder" class="org.springframework.security.crypto.password.StandardPasswordEncoder" />
+
 	<http auto-config="true" />
 
 	<authentication-manager>
 		<authentication-provider>
+			<password-encoder ref="encoder" />
 			<user-service>
-				<user name="hoge" password="fuga" authorities="ROLE_USER" />
+				<user name="hoge" password="4c17b8a334f61a4d5c0b79f11977482ea7542c0761b74ee421b9cfe620ec1a7e07357932200428f6" authorities="ROLE_USER" />
 			</user-service>
 		</authentication-provider>
 	</authentication-manager>
