@@ -11,7 +11,11 @@
 
 <P>  The time on the server is ${serverTime}. </P>
 
-<a href="<c:url value='/spring_security_login' />">Login</a>
+<p><a href="<c:url value='/spring_security_login' />">Login</a></p>
+
+<c:if test="${not empty userName}">
+	<p>Logged in as: ${userName}</p>
+</c:if>
 
 </body>
 </html>
