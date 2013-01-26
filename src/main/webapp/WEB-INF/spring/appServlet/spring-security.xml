@@ -16,7 +16,9 @@
 
 	<beans:bean id="encoder" class="org.springframework.security.crypto.password.StandardPasswordEncoder" />
 
-	<http auto-config="true" />
+	<http auto-config="true">
+		<form-login login-page="/login" />
+	</http>
 
 	<authentication-manager>
 		<authentication-provider>
