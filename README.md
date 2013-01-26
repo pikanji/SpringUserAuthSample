@@ -5,6 +5,7 @@ This project demonstrates how to implement user authentication for front-end web
 
 Git Tags
 ==========
+* custom_login: Uses a customized login page
 * signup: Sign-up form added
 * database: Uses DB for auth
 * encrypt: Uses encrypted password
