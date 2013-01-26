@@ -9,6 +9,15 @@
 
 <form action="<c:url value='j_spring_security_check' />" method="POST">
 
+	<c:if test="${not empty loginerror}">
+		<p>
+			<font color="#ff0000">
+			Invalid Username or Password <br>
+			Please try again.
+			</font>
+		</p>
+	</c:if>
+
 	<label>User Name : </label>
 	<input type="text" name="j_username" value="" />
 	<br />
