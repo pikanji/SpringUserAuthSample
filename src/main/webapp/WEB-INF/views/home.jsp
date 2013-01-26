@@ -13,6 +13,8 @@
 
 <p><a href="<c:url value='/spring_security_login' />">Login</a></p>
 
+<p><a href="<c:url value='/signup' />">Sign up</a></p>
+
 <c:if test="${not empty userName}">
 	<p>Logged in as: ${userName}</p>
 </c:if>
